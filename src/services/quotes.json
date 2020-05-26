@@ -1,15 +1,12 @@
 [
   {
-    "text": "",
-    "author": "",
-    "source": ""
-  },
-  {
+    "id":"1",
     "text": "What we need, we, is fixedness intense, Unequalled effort, strive that shall not cease, Is night, the bitter night of labour, whence Arises, sun-like, slow, the Master-piece.",
     "author": "Paul Verlaine",
     "source": ""
   },
   {
+    "id":"2",
     "text": "Throughout the whole of life one must continue to learn to live. And what will amaze you even more, throughout life one must learn to die.",
     "author": "Seneca",
     "source": ""
@@ -20,11 +17,13 @@
     "source": ""
   },
   {
+    "id":"3",
     "text": "Those things that hurt instruct.",
     "author": "Benjamin Franklin",
     "source": ""
   },
   {
+    "id":"4",
     "text": "But what matters an eternity of damnation to one who has found in a second an infinite joy.",
     "author": "Charles Baudelaire",
     "source": ""

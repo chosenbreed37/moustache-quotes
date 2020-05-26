@@ -34,31 +34,34 @@ const Quote = ({ match }) => {
     const [state, setState] = useState(defaultState);
     const classes = useStyles();
 
-    useEffect(() => {
-        const fetchData = async (id) => await quoteService.get(id);
+    const fetchQuote = async () => {
         if (id) {
-            const quote = fetchData(id);
-            setState({ ...state, quote });
+            const quote = await quoteService.get(id);
+            setState({...state, quote});
         }
+    }
+
+    useEffect(() => {
+        fetchQuote();
     }, [id, state]);
 
     const isValid = (quote) => {
         if (quote.text) {
-            return { valid: true, errors: {}}
+            return { valid: true, errors: {} }
         } else {
-            return { valid: false, errors: { text: 'Please enter some text'}}
+            return { valid: false, errors: { text: 'Please enter some text' } }
         }
     }
 
     const handleSubmit = () => {
         const { quote } = state;
-        const {valid, errors} = isValid(quote);
-         if (valid) {
+        const { valid, errors } = isValid(quote);
+        if (valid) {
             quoteService.save(quote);
-            setState({...state, errors});
+            setState({ ...state, errors });
             // history.push('/');
         } else {
-            setState({...state, errors});
+            setState({ ...state, errors });
         }
     };
 
@@ -91,8 +94,8 @@ const Quote = ({ match }) => {
                     <div className='field'>
                         <TextField id='quoteText'
                             name='text'
-                            error = {state.errors && state.errors.text}
-                            helperText = {state.errors && state.errors.text}
+                            error={state.errors && state.errors.text}
+                            helperText={state.errors && state.errors.text}
                             label='Text' multiLine
                             rowsMax={5}
                             multiline
