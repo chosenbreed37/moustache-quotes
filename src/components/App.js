@@ -7,7 +7,7 @@ import SearchBox from './search-box';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
-import quoteService from '../services/memory.quotes';
+import quoteService from '../services/firebase.quotes';
 
 const Home = () => {
   const [state, setState] = useState({ term: '', quotes: [] });
@@ -41,8 +41,8 @@ const Home = () => {
             onClick={onSubmit}
         >Search</Button>
         </form>
-        </header>
       <QuotesList quotes={state.quotes} />
+        </header>
 
     </div>
   );

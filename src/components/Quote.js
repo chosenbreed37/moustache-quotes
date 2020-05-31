@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { useParams, useHistory } from 'react-router-dom';
 import logo from '../assets/images/mustache.png';
-import quoteService from '../services/memory.quotes';
+import quoteService from '../services/firebase.quotes';
 
 import { makeStyles } from '@material-ui/core/styles';
 import './Quote.css';
@@ -43,7 +43,7 @@ const Quote = ({ match }) => {
 
     useEffect(() => {
         fetchQuote();
-    }, [id, state]);
+    }, [id]);
 
     const isValid = (quote) => {
         if (quote.text) {
